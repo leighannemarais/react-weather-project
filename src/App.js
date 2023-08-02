@@ -14,8 +14,12 @@ export default function App() {
             target="_blank"
             rel="noreferrer"
           >
-            open-sourced
-          </a>
+            open-sourced on Github
+          </a>{" "}
+          <span>
+            and hosted on{" "}
+            <a href="https://dainty-croissant-003f65.netlify.app/">Netlify</a>
+          </span>
         </footer>
       </div>
     </div>
