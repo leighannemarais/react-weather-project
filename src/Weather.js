@@ -14,11 +14,10 @@ export default function Weather(props) {
       wind: response.data.wind.speed,
       city: response.data.name,
       date: "Tuesday",
-      iconUrl: "https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png",
+      iconUrl: "http://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png",
     });
   }
-
-  if (WeatherData.ready) {
+  if (weatherData.ready) {
     return (
       <div className="Weather">
         <form>
@@ -36,21 +35,21 @@ export default function Weather(props) {
             </div>
           </div>
         </form>
-        <h1>{WeatherData.city}</h1>
+        <h1>{weatherData.city}</h1>
         <ul>
-          <li>{WeatherData.date}</li>
-          <li className="text-capitalize">{WeatherData.description}</li>
+          <li>{weatherData.date}</li>
+          <li className="text-capitalize">{weatherData.description}</li>
         </ul>
         <div className="row mt-3">
           <div className="col-6">
             <div className="clearfix">
               <img
-                src={WeatherData.iconURL}
-                alt={WeatherData.description}
+                src={weatherData.iconURL}
+                alt={weatherData.description}
                 className="float-left"
               />
               <span className="temperature">
-                {Math.round(WeatherData.temperature)}
+                {Math.round(weatherData.temperature)}
               </span>
               <span className="unit">°C</span>
             </div>
@@ -58,16 +57,16 @@ export default function Weather(props) {
           <div className="col-6">
             <ul>
               <li>Precipitation: 15%</li>
-              <li>Humidity: {WeatherData.humidity}</li>
-              <li>Wind: {WeatherData.wind} km/h</li>
+              <li>Humidity: {weatherData.humidity}</li>
+              <li>Wind: {weatherData.wind} km/h</li>
             </ul>
           </div>
         </div>
       </div>
     );
   } else {
-    const apiKey = "653d38fae0bb2007aa5fc88t5o84a34f";
-    let apiUrl = `http://api.openweathermap.org/data/2.5/weather?q=${props.city}&appid=${apiKey}&units=metric`;
+    const apiKey = "6a48a550fc04f170639e60d52b8a6bc5";
+    let apiUrl = `http://api.openweathermap.org/data/2.5/weather?q=${props.defaultCity}&appid=${apiKey}&units=metric`;
     axios.get(apiUrl).then(handleResponse);
 
     return "Loading...";
