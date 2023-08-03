@@ -18,7 +18,13 @@ export default function App() {
           </a>{" "}
           <span>
             and hosted on{" "}
-            <a href="https://dainty-croissant-003f65.netlify.app/">Netlify</a>
+            <a
+              href="https://dainty-croissant-003f65.netlify.app/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Netlify
+            </a>
           </span>
         </footer>
       </div>
